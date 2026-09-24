@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Резюме - Петрунькин Павел Сергеевич</title>
+    <style>
+      :root {
+        --primary-color: #2563eb;
+        --text-color: #1f2937;
+        --text-muted: #4b5563;
+        --bg-body: #f3f4f6;
+        --bg-card: #ffffff;
+        --border-color: #e5e7eb;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+          Arial, sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background-color: var(--bg-body);
+        padding: 20px;
+      }
+
+      .resume-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        background: var(--bg-card);
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow:
+          0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      }
+
+      /* Header Section */
+      header {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        border-bottom: 2px solid var(--border-color);
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+      }
+
+      .avatar {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        background-color: #e5e7eb;
+        border: 3px solid var(--primary-color);
+      }
+
+      .header-info h1 {
+        font-size: 2rem;
+        color: #111827;
+        margin-bottom: 5px;
+      }
+
+      .subtitle {
+        font-size: 1.25rem;
+        color: var(--primary-color);
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .meta-info {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+      }
+
+      /* Layout Grid */
+      .main-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 40px;
+      }
+
+      section {
+        margin-bottom: 35px;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+        color: #111827;
+        border-bottom: 2px solid var(--border-color);
+        padding-bottom: 8px;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      /* Job Items */
+      .job-item {
+        margin-bottom: 30px;
+      }
+
+      .job-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 10px;
+      }
+
+      .job-title {
+        font-weight: bold;
+        font-size: 1.1rem;
+        color: #111827;
+      }
+
+      .job-company {
+        color: var(--primary-color);
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      .job-date {
+        font-size: 0.85rem;
+        color: white;
+        background: var(--text-muted);
+        padding: 2px 8px;
+        border-radius: 4px;
+        white-space: nowrap;
+      }
+
+      .job-stack {
+        font-size: 0.9rem;
+        background: #eff6ff;
+        padding: 8px 12px;
+        border-left: 3px solid var(--primary-color);
+        margin: 10px 0;
+        border-radius: 0 4px 4px 0;
+      }
+
+      .job-desc {
+        list-style-type: none;
+      }
+
+      .job-desc li {
+        position: relative;
+        padding-left: 15px;
+        margin-bottom: 6px;
+        font-size: 0.95rem;
+      }
+
+      .job-desc li::before {
+        content: "•";
+        color: var(--primary-color);
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+      }
+
+      /* Sidebar / Right Column */
+      .contacts-list {
+        list-style: none;
+      }
+
+      .contacts-list li {
+        margin-bottom: 12px;
+        font-size: 0.95rem;
+      }
+
+      .contacts-list a {
+        color: var(--primary-color);
+        text-decoration: none;
+      }
+
+      .contacts-list a:hover {
+        text-decoration: underline;
+      }
+
+      .skills-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .skill-tag {
+        background: #f3f4f6;
+        color: #374151;
+        padding: 4px 10px;
+        border-radius: 6px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        border: 1px solid var(--border-color);
+      }
+
+      .edu-item {
+        margin-bottom: 15px;
+      }
+
+      .edu-title {
+        font-weight: bold;
+        font-size: 0.95rem;
+      }
+
+      .edu-meta {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          text-align: center;
+          gap: 15px;
+        }
+
+        .main-content {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        .job-header {
+          flex-direction: column;
+          gap: 5px;
+        }
+
+        .resume-container {
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="resume-container">
+      <header>
+        <!-- Замените src на путь к вашему фото, если необходимо -->
+        <img
+          class="avatar"
+          src="mePhoto.jpg"
+          alt="Петрунькин Павел Сергеевич"
+        />
+        <div class="header-info">
+          <h1>Петрунькин Павел Сергеевич</h1>
+          <div class="subtitle">Middle Frontend-разработчик</div>
+          <div class="meta-info">
+            Мужчина, 30 лет (родился 24 января 1996) | Проживание: Москва <br />
+            Гражданство: Россия | Готов к командировкам, готов к переезду
+          </div>
+        </div>
+      </header>
+
+      <div class="main-content">
+        <!-- Левая колонка: Опыт работы -->
+        <div class="left-column">
+          <section>
+            <h2>Опыт работы (7 лет 1 месяц)</h2>
+
+            <!-- Текущее место -->
+            <div class="job-item">
+              <div class="job-header">
+                <div>
+                  <span class="job-title">Frontend-разработчик</span>
+                  <div class="job-company">Пет проекты</div>
+                </div>
+                <span class="job-date">Август 2026 — Наст. время (2 мес)</span>
+              </div>
+              <p style="font-size: 0.95rem; margin-bottom: 5px">
+                Репозитории:
+                <a href="https://github.com/kaiflife" target="_blank"
+                  >https://github.com/kaiflife</a
+                >
+              </p>
+              <ul class="job-desc">
+                <li>
+                  <a
+                    href="https://github.com/kaiflife/green-api-max-react"
+                    target="_blank"
+                    >green-api-max-react</a
+                  >
+                  Написал интеграцию с ботом Max для Green-API и получил от них
+                  <a href="green-api.pdf" target="_blank">Сертификат</a>
+                </li>
+                <li>
+                  <a href="https://github.com/kaiflife/vr-web" target="_blank"
+                    >vr-web</a
+                  >
+                  Делаю VR Quest3 игрушку чисто для себя на js
+                </li>
+                <li>
+                  <a href="https://github.com/kaiflife/learning" target="_blank"
+                    >learning</a
+                  >
+                  Прокачиваю навыки фронтенд-разработки: Module Federation,
+                  Tailwind CSS, Bun, Vite, Zustand, TS, Web Workers, Oxlint,
+                  Prettier.
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/kaiflife/todoSpringBoost"
+                    target="_blank"
+                    >todoSpringBoost</a
+                  >
+                  Начал изучать Java, Spring Boot, Maven, Docker для плавного
+                  перехода на Fullstack и лёгкого прохода обучения в сбер школе
+                  21.
+                </li>
+                <li>
+                  <a href="https://github.com/kaiflife/qa-tree" target="_blank"
+                    >qa-tree</a
+                  >
+                  <br />
+                  <a
+                    href="https://github.com/kaiflife/playwright-qa-playground"
+                    target="_blank"
+                    >playwright-qa-playground</a
+                  >
+                  Решил попробовать себя в QA перед сбер школой 21. Составил
+                  дерево теории по QA. А также написал пару автотестов на
+                  playwright
+                </li>
+              </ul>
+            </div>
+
+            <!-- Норд Диджитал -->
+            <div class="job-item">
+              <div class="job-header">
+                <div>
+                  <span class="job-title">Middle Frontend-разработчик</span> |
+                  <a
+                    class="job-company"
+                    href="http://norddig.ru"
+                    target="_blank"
+                    >Норд Диджитал</a
+                  >
+                  (Санкт-Петербург)
+                </div>
+                <span class="job-date"
+                  >Сентябрь 2024 — Август 2026 (2 года)</span
+                >
+              </div>
+
+              <p>
+                <strong>Проект АБДМ</strong> (Автоматизированная система
+                управления и обработки информации по искусственным дорожным
+                сооружениям)
+              </p>
+              <div class="job-stack">
+                <strong>Стек:</strong> React 19, Vite, Vitest, ESLint, Prettier,
+                MUI (компоненты, тема и styled), Material React Table, D3,
+                Microsoft SignalR, docx, pdf-js, ECharts, Leaflet, Effector,
+                React Hook Form.
+              </div>
+              <ul class="job-desc">
+                <li>
+                  Переписывал десктопное приложение на веб-версию, обеспечивал
+                  архитектурный переход на FSD и поддержку функционала React 19.
+                </li>
+                <li>
+                  Обосновал переход к событийно-ориентированной модели
+                  управления состоянием (Effector), сократив время реализации
+                  сложных фич.
+                </li>
+                <li>
+                  Обеспечил высокую производительность рендера при работе с
+                  большими объемами данных и таблиц благодаря связке Effector +
+                  React Hook Form.
+                </li>
+                <li>
+                  Разработал интерактивные дашборды (ECharts) и внедрил карты
+                  (Leaflet) для геопозиционирования и мониторинга ИССО.
+                </li>
+                <li>
+                  Реализовал SQL-конструктор (графический интерфейс запросов к
+                  БД) и модуль динамических форм с глубокой валидацией для ~80
+                  типов конструкций.
+                </li>
+                <li>Проводил менторство коллег и детальный код-ревью.</li>
+              </ul>
+
+              <p style="margin-top: 15px">
+                <strong>Проект АБДД</strong> (Отраслевой автоматизированный банк
+                дорожных данных)
+              </p>
+              <div class="job-stack">
+                <strong>Стек:</strong> React 16, Node.js (сборка/запуск),
+                Leaflet, ECharts, Jest, React Hook Form, React Table, MUI.
+              </div>
+              <ul class="job-desc">
+                <li>Поддерживал и развивал архитектуру проекта.</li>
+              </ul>
+            </div>
+            <!-- РНИЦ по Ленинградской области -->
+            <div class="job-item">
+              <div class="job-header">
+                <div>
+                  <span class="job-title">Инженер-программист</span> |
+                  <span class="job-company">РНИЦ по Ленинградской области</span>
+                  (Санкт-Петербург)
+                </div>
+                <span class="job-date"
+                  >Май 2022 — Октябрь 2024 (2 года 6 мес)</span
+                >
+              </div>
+              <ul class="job-desc">
+                <li>
+                  <strong>Архитектурная трансформация:</strong> Выделил Frontend
+                  в отдельный сервис. Это позволило ускорить доставку фич
+                  (Time-to-Market) в 2 раза.
+                </li>
+                <li>
+                  <strong>Разработка с нуля:</strong> Спроектировал и запустил
+                  систему «Региональный кадастр отходов» (5 подпроектов),
+                  включая сложный механизм годовой отчетности из 10 форм с
+                  расчетом валидации в реальном времени.
+                </li>
+                <li>
+                  <strong>Mobile Excellence:</strong> Разработал мобильное
+                  приложение для граждан на React Expo и дорабатывал приложение
+                  на Flutter.
+                </li>
+                <li>
+                  <strong>QA Automation:</strong> Внедрил E2E тестирование
+                  (Cypress для Web и Maestro для Mobile) и интегрировал их в
+                  CI/CD (GitLab).
+                </li>
+              </ul>
+            </div>
+            <!-- Dunice -->
+            <div class="job-item">
+              <div class="job-header">
+                <div>
+                  <span class="job-title">Инженер-программист</span> |
+                  <a
+                    class="job-company"
+                    href="https://dunice.net"
+                    target="_blank"
+                    >Dunice</a
+                  >
+                  (Таганрог)
+                </div>
+                <span class="job-date"
+                  >Сентябрь 2019 — Май 2022 (2 года 9 мес)</span
+                >
+              </div>
+              <ul class="job-desc">
+                <li>
+                  <strong>Bidbash:</strong> Разработал биржу заказов с чатом на
+                  Socket.io и хранением медиа на AWS S3.
+                </li>
+                <li>
+                  <strong>Financial Care:</strong> Выполнил миграцию крупного
+                  приложения на Next.js, оптимизировав SEO и производительность.
+                </li>
+                <li>
+                  <strong>NDA Проект (Экология):</strong> Создал калькулятор
+                  углеродного следа с интеграцией Яндекс.Карт и сложной логикой
+                  построения маршрутов для разных видов транспорта.
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
